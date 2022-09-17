@@ -97,18 +97,17 @@ public class Item : MonoBehaviour
         col.enabled = false;
         RaycastHit2D r = Physics2D.Raycast(transform.position, -Vector2.up);
         col.enabled = true;
-
         if (r)
         {
             if (r.transform.tag == "Client")
             {
-                if (r.transform.GetComponent<Client>() == client)
-                {
+              //  if (r.transform.GetComponent<Client>() == client)
+               // {
                     Destroy(ghost.gameObject);
                     dragging = false;
                     RejectEffect();
                     return;
-                }
+               // }
             }
 
             if (r.transform.tag == "Register")
