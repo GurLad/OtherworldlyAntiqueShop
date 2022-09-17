@@ -11,6 +11,8 @@ public class GameUI : MonoBehaviour
     public List<Text> ScoreDisplays;
     public UIHeart BaseLifeImage;
     public GameObject GameOverDisplay;
+    public Text GameOverScore;
+    public Text GameOverHighScore;
     [Header("ObjectsData")]
     public float HeartOffset;
     [Header("Values")]
@@ -50,6 +52,12 @@ public class GameUI : MonoBehaviour
         {
             Time.timeScale = 0;
             GameOverDisplay.SetActive(true);
+            if (PlayerPrefs.GetFloat("HighScore") < currentScore)
+            {
+                PlayerPrefs.SetFloat("HighScore", currentScore);
+            }
+            GameOverScore.text = "Score: " + currentScore;
+            GameOverHighScore.text = "High score: " + PlayerPrefs.GetFloat("HighScore");
         }
     }
 }
