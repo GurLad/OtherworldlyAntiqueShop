@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCustomer: 0
-  conveyorSpeed: 0.6
-  customerWait: 3
+  conveyorSpeed: 0.9
+  customerWait: 2.5
   clientSpawnPos: {x: -6.97, y: 1.26, z: 0.2}
   itemSpawnPos: {x: -8.35, y: 0.776087, z: 0}
   clients:

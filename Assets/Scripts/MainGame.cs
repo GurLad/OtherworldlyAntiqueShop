@@ -40,8 +40,11 @@ public class MainGame : MonoBehaviour
             if (currentCustomer % 3 == 0)
             {
                 //values will change
-                conveyorSpeed += (1f);
-                customerWait -= (0.2f);
+                conveyorSpeed += (0.2f);
+                customerWait -= (0.4f);
+                customerWait = Mathf.Clamp(customerWait, 0.8f, 5f);
+                conveyorSpeed = Mathf.Clamp(conveyorSpeed, 0.5f, 8f);
+
 
             }
         }
