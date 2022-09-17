@@ -30,6 +30,7 @@ public class Item : MonoBehaviour
     Collider2D col;
 
     public GameObject money;
+    public GameObject skull;
 
     bool used = false;
 
@@ -157,7 +158,6 @@ public class Item : MonoBehaviour
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().LoseLife();
             SoundController.PlaySound(CurseSound);
-            CurseAnim();
 
             // Take damage
         }
@@ -183,15 +183,14 @@ public class Item : MonoBehaviour
             FindObjectOfType<GameUI>().LoseLife();
             SoundController.PlaySound(CurseSound);
 
-            // Take damage
         }
         else
         {
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().IncreaseScore(Score);
             SoundController.PlaySound(CurseBreak);
+            CurseAnim();
 
-            // Remove lives
         }
 
         //animations and stuff 
@@ -240,7 +239,7 @@ public class Item : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
-                GameObject g = Instantiate(money, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 2f), 0), Quaternion.identity);
+                GameObject g = Instantiate(skull, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 2f), 0), Quaternion.identity);
                 g.transform.DOScale(0, 1);
                 g.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
                 monies.Add(g);
