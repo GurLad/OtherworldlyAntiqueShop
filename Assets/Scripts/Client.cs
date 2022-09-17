@@ -26,6 +26,11 @@ public class Client : MonoBehaviour
 
     }
 
+    public void leave()
+    {
+        //anim.leave
+    }
+
     public void SpawnItem()
     {
         //create item

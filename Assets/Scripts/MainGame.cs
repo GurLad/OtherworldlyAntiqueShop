@@ -10,8 +10,9 @@ public class MainGame : MonoBehaviour
     public float customerWait;
 
     public Vector3 clientSpawnPos;
-    public Client client;
 
+
+    public List<Client> clients = new List<Client>();
 
     public List<Item> items = new List<Item>();
     public IEnumerator MainGameLoop()
@@ -41,7 +42,7 @@ public class MainGame : MonoBehaviour
     public void SpawnClient()
     {
         currentCustomer++;
-        Client c =Instantiate(client, clientSpawnPos, Quaternion.identity);
+        Client c =Instantiate(clients[Random.Range(0,clients.Count)], clientSpawnPos, Quaternion.identity);
         Item randomitem = items[Random.Range(0, items.Count)];
         c.Init(randomitem);
     }

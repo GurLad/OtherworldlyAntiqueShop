@@ -136,6 +136,7 @@ public class Item : MonoBehaviour
     public void BuyEffect()
     {
         itemEffect.Buy();
+
     }
 
     public void RejectEffect()
@@ -149,7 +150,8 @@ public class Item : MonoBehaviour
     {
 
         this.transform.DOScale(0, 0.5f).SetEase(Ease.OutQuint);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
+        client.leave();
         Destroy(this.gameObject);
 
 
