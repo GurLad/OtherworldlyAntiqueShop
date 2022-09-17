@@ -159,9 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ada9c8e1e6d5294482a17abbeea23fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemEffect: {fileID: 0}
   ghostobject: {fileID: 6690838324818566094, guid: 501d5f54d0a60054fb99b5e379948ecf, type: 3}
   anim: {fileID: 7575393908772317862}
+  corrupted: 0
+  score: 0
   conveyorSpeed: 0.5
   RegisterXpoint: 5.4
   ClientOffset: {x: 0, y: 0, z: 0}

@@ -19,6 +19,7 @@ public class GameUI : MonoBehaviour
     private void Start()
     {
         currentLives = BaseLifeAmount;
+        lives = new UIHeart[BaseLifeAmount];
         for (int i = 0; i < BaseLifeAmount; i++)
         {
             UIHeart lifeIcon = Instantiate(BaseLifeImage, BaseLifeImage.transform.parent);
