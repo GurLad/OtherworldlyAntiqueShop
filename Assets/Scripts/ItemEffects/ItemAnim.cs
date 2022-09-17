@@ -37,8 +37,10 @@ public class ItemAnim : MonoBehaviour
         Renderer.DOFade(1, 1 / JumpSpeed);
         SquashAnchor.DOScale(Vector3.one, 1 / JumpSpeed);
         SquashAnchor.DOLocalJump(Vector3.zero, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
-            SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
-            SquashAnchor.DOScaleY(1, 1 / SquashSpeed).OnKill(() =>
-            Finished = true)));
+            {
+                Finished = true;
+                SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
+                    SquashAnchor.DOScaleY(1, 1 / SquashSpeed));
+            });
     }
 }
