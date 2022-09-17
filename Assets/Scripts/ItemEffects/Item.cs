@@ -21,6 +21,7 @@ public class Item : MonoBehaviour
     private Vector3 realpos;
     private bool dragging;
     private SpriteRenderer ghost;
+    [SerializeField]
     private Client client;
 
 
@@ -140,10 +141,14 @@ public class Item : MonoBehaviour
     {
         if (corrupted)
         {
+            StartCoroutine(DestroyAnimLoop());
+
             // Take damage
         }
         else
         {
+            StartCoroutine(DestroyAnimLoop());
+
             // Remove lives
         }
     }
