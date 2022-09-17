@@ -5,6 +5,10 @@ using DG.Tweening;
 
 public class ClientAnim : MonoBehaviour
 {
+    [Header("Sprites")]
+    public List<Sprite> Heads;
+    public List<Sprite> Bodies;
+    [Header("Objects")]
     public Transform Head;
     public List<SpriteRenderer> Renderers;
     public Transform Anchor;
@@ -33,6 +37,8 @@ public class ClientAnim : MonoBehaviour
     public void Spawn(Client client)
     {
         this.client = client;
+        Renderers[0].sprite = Heads[Random.Range(0, Heads.Count)]; // Assume 0 for head and 1 for body - bad code but who cares
+        Renderers[1].sprite = Bodies[Random.Range(0, Bodies.Count)];
         // Spawn animation
         Anchor.localEulerAngles = JumpInitRot;
         headInitPos = Head.transform.localPosition.y;

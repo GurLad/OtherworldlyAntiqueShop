@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4205600525478391547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7709033515052615654}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6682027434420514059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.55, z: 0}
+  m_LocalPosition: {x: 0, y: 2.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7709033515052615654}
@@ -255,10 +255,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df5013a260cf96469d5a5d51e5d27f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Heads:
+  - {fileID: 7755224123621818408, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: -3557554893070573299, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: 1893670189769602202, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: -3102994270238535240, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: -4572274602858593414, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: 1189779305756619486, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  Bodies:
+  - {fileID: -1975635887328401948, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: 4367732871754573918, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
+  - {fileID: 8901077990765384427, guid: f912e96a1bca05d468b403863f65b63f, type: 3}
   Head: {fileID: 4306440419131760522}
   Renderers:
-  - {fileID: 6140439450476456600}
   - {fileID: 2459704978090702111}
+  - {fileID: 6140439450476456600}
   Anchor: {fileID: 7709033515052615654}
   JumpInitRot: {x: 0, y: 0, z: 55}
   JumpSpeed: 5
@@ -266,7 +277,7 @@ MonoBehaviour:
   KnockbackSpeed: 15
   ItemSpawnDelay: 0.5
   BopRateRange: {x: 0.3, y: 0.7}
-  BopStrengthRange: {x: 0.5, y: 1.5}
+  BopStrengthRange: {x: 0.3, y: 0.7}
   LeaveSpeed: 1
   LeavePos: 10
   finished: 0

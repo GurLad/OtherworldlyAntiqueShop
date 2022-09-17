@@ -460,8 +460,6 @@ MonoBehaviour:
   clientSpawnPos: {x: -6.97, y: 1.26, z: 0.2}
   itemSpawnPos: {x: -8.35, y: 0.776087, z: 0}
   clients:
-  - {fileID: 968015827076298425, guid: 171e744b8e6174b42a52d7d00782fb57, type: 3}
-  - {fileID: 968015827076298425, guid: 7edd1ffc629ce974dabf6548dad9a083, type: 3}
   - {fileID: 968015827076298425, guid: ff0ed59adf403ab43819874d93ae9e91, type: 3}
   items:
   - {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
