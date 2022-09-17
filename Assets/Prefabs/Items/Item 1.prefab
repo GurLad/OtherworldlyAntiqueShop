@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1395244421180098910, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395244421180098910, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395244421180098910, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8327522
+      objectReference: {fileID: 0}
     - target: {fileID: 7575393908514091857, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: m_Name
       value: Item 1
@@ -56,8 +68,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
-      propertyPath: money
-      value: 
-      objectReference: {fileID: 6893999684118556499, guid: e01ece908d302324e90bddbea68264fc, type: 3}
+      propertyPath: Score
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}

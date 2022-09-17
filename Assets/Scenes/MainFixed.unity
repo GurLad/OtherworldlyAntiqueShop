@@ -214,12 +214,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3127912020649220321, guid: 302751c3de11ad344ae8bcb591bfb5c8, type: 3}
+      propertyPath: CameraEffects
+      value: 
+      objectReference: {fileID: 443952946}
     - target: {fileID: 4550893823808796787, guid: 302751c3de11ad344ae8bcb591bfb5c8, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302751c3de11ad344ae8bcb591bfb5c8, type: 3}
+--- !u!114 &443952946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9042146416424673498, guid: cdd607850231d594eba6767734b97733, type: 3}
+  m_PrefabInstance: {fileID: 8446616109251779370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c3c83d2585ab34891fa3b2e78684c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &455501217
 GameObject:
   m_ObjectHideFlags: 0
