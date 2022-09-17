@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5976375346966353300}
   - component: {fileID: 5976375346966353307}
+  - component: {fileID: 4856445562792130464}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -44,10 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tracks:
-  - Name: 
-    AudioClip: {fileID: 8300000, guid: 44567ccda09614a469ae928f668e7772, type: 3}
+  - Name: Main
+    AudioClip: {fileID: 8300000, guid: 65add79a851c5634cb08ed6e74f200b8, type: 3}
   FadeSpeed: 1
   Volume: 1
   PlayOnStart: 1
   KeepTimestamp: 0
   Playing: 
+--- !u!114 &4856445562792130464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976375346966353301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8298546ead920324b88f10c462c5799c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1

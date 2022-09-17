@@ -156,7 +156,7 @@ public class Item : MonoBehaviour
 
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().LoseLife();
-            FindObjectOfType<AudioSource>().PlayOneShot(CurseSound);
+            SoundController.PlaySound(CurseSound);
 
             // Take damage
         }
@@ -165,7 +165,7 @@ public class Item : MonoBehaviour
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().IncreaseScore(Score);
             MoneyAnim();
-            FindObjectOfType<AudioSource>().PlayOneShot(GetmoneySound);
+            SoundController.PlaySound(GetmoneySound);
             // Remove lives
         }
     }
@@ -180,7 +180,7 @@ public class Item : MonoBehaviour
                 
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().LoseLife();
-            FindObjectOfType<AudioSource>().PlayOneShot(CurseSound);
+            SoundController.PlaySound(CurseSound);
 
             // Take damage
         }
@@ -189,7 +189,7 @@ public class Item : MonoBehaviour
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().IncreaseScore(Score);
             MoneyAnim();
-            FindObjectOfType<AudioSource>().PlayOneShot(CurseBreak);
+            SoundController.PlaySound(CurseBreak);
 
             // Remove lives
         }
