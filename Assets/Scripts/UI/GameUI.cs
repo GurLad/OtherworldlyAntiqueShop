@@ -24,6 +24,7 @@ public class GameUI : MonoBehaviour
         {
             UIHeart lifeIcon = Instantiate(BaseLifeImage, BaseLifeImage.transform.parent);
             lifeIcon.Image.rectTransform.anchoredPosition -= new Vector2(HeartOffset * i, 0);
+            lifeIcon.gameObject.SetActive(true);
             lives[i] = lifeIcon;
         }
     }
