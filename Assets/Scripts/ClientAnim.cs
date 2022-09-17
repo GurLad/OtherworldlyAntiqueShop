@@ -32,6 +32,11 @@ public class ClientAnim : MonoBehaviour
         //    Anchor.DORotate(Vector3.zero, 1 / KnockbackSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc).OnKill(() =>
         //    { BeginBop(); finished = true; })));
     }
+
+    public void Leave()
+    {
+
+    }
     
     private void BeginBop()
     {
