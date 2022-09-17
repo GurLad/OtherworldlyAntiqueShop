@@ -9,6 +9,7 @@ public class MainGame : MonoBehaviour
     public float conveyorSpeed;
     public float customerWait;
 
+
     public IEnumerator MainGameLoop()
     {
         while (true)
