@@ -10,6 +10,7 @@ public class MainGame : MonoBehaviour
     public float customerWait;
 
     public Vector3 clientSpawnPos;
+    public Vector3 itemSpawnPos;
 
 
     public List<Client> clients = new List<Client>();

@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1067615291194769095, guid: 302751c3de11ad344ae8bcb591bfb5c8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1067615291194769095, guid: 302751c3de11ad344ae8bcb591bfb5c8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -440,7 +440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &790838961
 MonoBehaviour:
@@ -458,6 +458,7 @@ MonoBehaviour:
   conveyorSpeed: 0.5
   customerWait: 5
   clientSpawnPos: {x: -6.97, y: 1.26, z: 0.2}
+  itemSpawnPos: {x: -8.35, y: 0.776087, z: 0}
   clients:
   - {fileID: 968015827076298425, guid: 171e744b8e6174b42a52d7d00782fb57, type: 3}
   - {fileID: 968015827076298425, guid: 7edd1ffc629ce974dabf6548dad9a083, type: 3}

@@ -43,7 +43,7 @@ public class Client : MonoBehaviour
     public void SpawnItem()
     {
         //create item
-      Item item= Instantiate(this.item, transform.position+new Vector3(0,-1.5f,0), Quaternion.identity);
+      Item item= Instantiate(this.item, transform.position-new Vector3(0,3,0), Quaternion.identity);
         //init item
         item.Spawn(this, mg);
     }
