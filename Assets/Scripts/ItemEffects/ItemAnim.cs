@@ -16,7 +16,7 @@ public class ItemAnim : MonoBehaviour
     public Transform SquashAnchor;
     public float SquashHeight;
     public float SquashSpeed;
-    [HideInInspector]
+   // [HideInInspector]
     public bool Finished;
     private Vector3 targetPos;
 
@@ -27,6 +27,7 @@ public class ItemAnim : MonoBehaviour
 
     public void Spawn()
     {
+        Finished = false;
         targetPos = SquashAnchor.localPosition;
         SquashAnchor.localPosition = JumpInitPos;
         SquashAnchor.localScale = JumpInitSize;
@@ -37,6 +38,7 @@ public class ItemAnim : MonoBehaviour
         SquashAnchor.DOScale(Vector3.one, 1 / JumpSpeed);
         SquashAnchor.DOLocalJump(targetPos, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
             {
+                Debug.Log("yoo");
                 Finished = true;
                     SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
                     SquashAnchor.DOScaleY(1, 1 / SquashSpeed));
