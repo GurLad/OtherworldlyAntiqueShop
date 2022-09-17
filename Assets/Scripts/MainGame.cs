@@ -41,8 +41,8 @@ public class MainGame : MonoBehaviour
     public void SpawnClient()
     {
         currentCustomer++;
-      Client c =Instantiate(client, clientSpawnPos, Quaternion.identity);
+        Client c =Instantiate(client, clientSpawnPos, Quaternion.identity);
         Item randomitem = items[Random.Range(0, items.Count)];
-        c.init(randomitem);
+        c.Init(randomitem);
     }
 }

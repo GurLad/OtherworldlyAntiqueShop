@@ -19,17 +19,29 @@ public class Item : MonoBehaviour
     private SpriteRenderer ghost;
     private Client client;
 
+    public void Spawn(Client client, MainGame mg)
+    {
+        anim.Spawn();
+        this.client = client;
+        conveyorSpeed = mg.conveyorSpeed;
+    }
+
+    private void Reset()
+    {
+        anim = GetComponentInChildren<ItemAnim>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+    }
 
     private void Start()
     {
         maincam = Camera.main;
     }
-    
+
     private void FixedUpdate()
     {
         if (!dragging)
         {
-            transform.position += new Vector3( Time.fixedDeltaTime * conveyorSpeed,0,0);
+            transform.position += new Vector3(Time.fixedDeltaTime * conveyorSpeed, 0, 0);
             realpos = transform.position;
 
         }
@@ -53,7 +65,7 @@ public class Item : MonoBehaviour
         {
             return;
         }
-        ghost = Instantiate(ghostobject,transform.position,Quaternion.identity);
+        ghost = Instantiate(ghostobject, transform.position, Quaternion.identity);
         ghost.sprite = sr.sprite;
         dragging = true;
 
@@ -71,6 +83,10 @@ public class Item : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!anim.Finished)
+        {
+            return;
+        }
         transform.position = ghost.transform.position;
         Destroy(ghost);
         dragging = false;
@@ -83,7 +99,6 @@ public class Item : MonoBehaviour
     }
 
 
-
     public void BuyEffect()
     {
         itemEffect.Buy();
@@ -94,5 +109,5 @@ public class Item : MonoBehaviour
         //animations and stuff 
     }
 
-  
+
 }

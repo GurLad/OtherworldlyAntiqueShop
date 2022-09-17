@@ -5,9 +5,6 @@ using DG.Tweening;
 
 public class ItemAnim : MonoBehaviour
 {
-
-    public ItemEffect Effect;
-
     public SpriteRenderer Renderer;
     [Header("SpawnJump")]
     public Vector3 JumpInitPos; // Final is Vector3.zero
@@ -29,7 +26,6 @@ public class ItemAnim : MonoBehaviour
 
     private void Reset()
     {
-        Effect = GetComponentInChildren<ItemEffect>();
         Renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
