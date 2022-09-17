@@ -18,7 +18,7 @@ public class MainGame : MonoBehaviour
     public List<Item> items = new List<Item>();
 
 
-
+    private int counter = 0;
     
 
 
@@ -45,7 +45,11 @@ public class MainGame : MonoBehaviour
                 customerWait -= (0.2f);
                 customerWait = Mathf.Clamp(customerWait, 0.8f, 3f);
                 conveyorSpeed = Mathf.Clamp(conveyorSpeed, 1.5f, 8f);
-
+                // Music change
+                if (++counter < 5)
+                {
+                    CrossfadeMusicPlayer.Instance.Play("Main" + counter);
+                }
 
             }
         }

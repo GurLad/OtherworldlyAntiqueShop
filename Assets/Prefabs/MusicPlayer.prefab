@@ -45,8 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tracks:
-  - Name: Main
+  - Name: Main0
     AudioClip: {fileID: 8300000, guid: 65add79a851c5634cb08ed6e74f200b8, type: 3}
+  - Name: Main1
+    AudioClip: {fileID: 8300000, guid: b8a7dc624064fae4faf792351b17abfa, type: 3}
+  - Name: Main2
+    AudioClip: {fileID: 8300000, guid: e5b8a8eedc3249b4c8c32477402b8377, type: 3}
+  - Name: Main3
+    AudioClip: {fileID: 8300000, guid: a954dc226028c2f4d91e94761034cad8, type: 3}
+  - Name: Main4
+    AudioClip: {fileID: 8300000, guid: 05f8d6b4c62c33f4d9d6c7df91009afd, type: 3}
   FadeSpeed: 1
   Volume: 1
   PlayOnStart: 1
