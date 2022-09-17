@@ -120,7 +120,7 @@ public class Item : MonoBehaviour
             }
         }
 
-        Destroy(ghost);
+        Destroy(ghost.gameObject);
         dragging = false;
         transform.position = ghost.transform.position;
       
