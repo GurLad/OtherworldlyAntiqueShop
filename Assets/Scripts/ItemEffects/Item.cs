@@ -111,7 +111,7 @@ public class Item : MonoBehaviour
                 }
             }
 
-            if (r.transform.tag == "Client")
+            if (r.transform.tag == "Register")
             {
                 Destroy(ghost.gameObject);
                 dragging = false;

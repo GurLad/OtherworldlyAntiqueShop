@@ -22,7 +22,7 @@ public class Client : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
+        //transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
 
     }
 
