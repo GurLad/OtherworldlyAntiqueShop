@@ -13,6 +13,12 @@ public class Client : MonoBehaviour
         anim = GetComponent<ClientAnim>();
     }
 
+    private void Start()
+    {
+        // TEMP!!!!
+        Init(null);
+    }
+
     public void Init(Item item)
     {
         mg = FindObjectOfType<MainGame>();
@@ -28,7 +34,7 @@ public class Client : MonoBehaviour
 
     public void leave()
     {
-        //anim.leave
+        anim.Leave();
     }
 
     public void SpawnItem()
