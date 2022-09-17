@@ -12,6 +12,9 @@ public class Item : MonoBehaviour
     bool dragging;
     SpriteRenderer ghost;
     public SpriteRenderer ghostobject;
+
+
+    public float RegisterXpoint;
     private void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -25,12 +28,20 @@ public class Item : MonoBehaviour
         if (!dragging)
         {
             transform.position += new Vector3( Time.fixedDeltaTime * conveyorSpeed,0,0);
+            realpos = transform.position;
 
         }
         else
         {
-            ghost.transform.position += new Vector3(Time.fixedDeltaTime * conveyorSpeed, 0, 0);
 
+            ghost.transform.position += new Vector3(Time.fixedDeltaTime * conveyorSpeed, 0, 0);
+            realpos = ghost.transform.position;
+
+        }
+
+        if (realpos.x >= RegisterXpoint)
+        {
+            BuyEffect();
         }
     }
 
@@ -58,6 +69,10 @@ public class Item : MonoBehaviour
         Destroy(ghost);
         dragging = false;
 
+        //if mosue on top of the client do something
+
+        //if mouse on top of cash register do someting
+        
         //if mouse up on nothing return to previous position + movement (show movement with a translucent copy)
     }
 
@@ -76,7 +91,7 @@ public class Item : MonoBehaviour
 
     public void RejectEffect()
     {
-        //animations and stuff yee
+        //animations and stuff 
     }
 
   
