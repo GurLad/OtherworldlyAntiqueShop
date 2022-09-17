@@ -275,7 +275,7 @@ MonoBehaviour:
   JumpSpeed: 5
   KnockbackRot: {x: 0, y: 0, z: -15}
   KnockbackSpeed: 15
-  ItemSpawnDelay: 0.3
+  ItemSpawnDelay: 0
   BopRateRange: {x: 0.3, y: 0.7}
   BopStrengthRange: {x: 0.3, y: 0.7}
   LeaveSpeed: 1

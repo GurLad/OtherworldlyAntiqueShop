@@ -150,7 +150,7 @@ public class Item : MonoBehaviour
     {
         if (used) return;
         used = true;
-        if (corrupted)
+        if (!corrupted)
         {
 
 
@@ -174,10 +174,10 @@ public class Item : MonoBehaviour
     {
 
 
-        if (!corrupted)
+        if (corrupted)
         {
 
-
+                
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().LoseLife();
             FindObjectOfType<AudioSource>().PlayOneShot(CurseSound);
