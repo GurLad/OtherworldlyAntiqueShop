@@ -28,7 +28,7 @@ public class ItemAnim : MonoBehaviour
 
     public void Spawn()
     {
-       // Renderer.sprite = Sprites[Random.Range(0, Sprites.Count)];
+        Renderer.sprite = Sprites[Random.Range(0, Sprites.Count)];
         Finished = false;
         targetPos = SquashAnchor.localPosition;
         SquashAnchor.localPosition = JumpInitPos;
@@ -43,10 +43,13 @@ public class ItemAnim : MonoBehaviour
                 Debug.Log("yoo");
                 Finished = true;
                     SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
-                    SquashAnchor.DOScaleY(1, 1 / SquashSpeed));
+                    SquashAnchor.DOScaleY(1, 1 / SquashSpeed).OnKill(() => BeginBop()));
             });
     }
 
-
-   
+    private void BeginBop()
+    {
+        SquashAnchor.DOScaleY(0.9f, SquashSpeed).OnKill(() =>
+            SquashAnchor.DOScaleY(1.1f, SquashSpeed).OnKill(() => BeginBop()));
+    }
 }

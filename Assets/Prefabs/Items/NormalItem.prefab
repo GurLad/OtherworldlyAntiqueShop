@@ -71,15 +71,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 104715103831677944, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.4299066, y: 2.8317757}
+  m_Size: {x: 4, y: 2.4859812}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6348525376608100248
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 7575393908772317862}
   - component: {fileID: 1916629043}
   m_Layer: 0
-  m_Name: item
+  m_Name: NormalItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ghostobject: {fileID: 6690838324818566094, guid: 501d5f54d0a60054fb99b5e379948ecf, type: 3}
   anim: {fileID: 7575393908772317862}
-  corrupted: 1
+  corrupted: 0
   RegisterXpoint: 5.4
   ClientOffset: {x: 0, y: 0, z: 0}
   client: {fileID: 0}
@@ -183,12 +183,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprites:
-  - {fileID: -5913456653603533155, guid: 147ee644233f32248b3f4d013622861b, type: 3}
-  - {fileID: -9136557728572805274, guid: 147ee644233f32248b3f4d013622861b, type: 3}
-  - {fileID: -4161462091866783698, guid: 147ee644233f32248b3f4d013622861b, type: 3}
-  - {fileID: -1934693157383628756, guid: 147ee644233f32248b3f4d013622861b, type: 3}
-  - {fileID: 7797035632363250131, guid: 147ee644233f32248b3f4d013622861b, type: 3}
-  - {fileID: 6598607689180515940, guid: 147ee644233f32248b3f4d013622861b, type: 3}
+  - {fileID: 104715103831677944, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
+  - {fileID: -8231904932414930910, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
+  - {fileID: 4844726471454588560, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
+  - {fileID: 3029946879788329278, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
+  - {fileID: -249468225903198348, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
+  - {fileID: 6009474057234169899, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
+  - {fileID: 118345325461629686, guid: 57ae17a89855fee459e9b9d3bab450a7, type: 3}
   Renderer: {fileID: 1395244421180098910}
   JumpInitPos: {x: 0, y: 2, z: 0}
   JumpInitSize: {x: 0.2, y: 0.2, z: 0.2}
