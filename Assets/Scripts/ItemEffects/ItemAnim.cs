@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class ItemAnim : MonoBehaviour
 {
+    public List<Sprite> Sprites;
     public SpriteRenderer Renderer;
     [Header("SpawnJump")]
     public Vector3 JumpInitPos; // Final is Vector3.zero
@@ -27,6 +28,7 @@ public class ItemAnim : MonoBehaviour
 
     public void Spawn()
     {
+        Renderer.sprite = Sprites[Random.Range(0, Sprites.Count)];
         Finished = false;
         targetPos = SquashAnchor.localPosition;
         SquashAnchor.localPosition = JumpInitPos;
