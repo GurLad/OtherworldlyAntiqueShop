@@ -101,13 +101,13 @@ public class Item : MonoBehaviour
         {
             if (r.transform.tag == "Client")
             {
-              //  if (r.transform.GetComponent<Client>() == client)
-               // {
+               if (r.transform.GetComponent<Client>() == client)
+                {
                     Destroy(ghost.gameObject);
                     dragging = false;
                     RejectEffect();
                     return;
-               // }
+                }
             }
 
             if (r.transform.tag == "Register")

@@ -207,9 +207,9 @@ GameObject:
   - component: {fileID: 8537432976785258148}
   - component: {fileID: 968015827076298425}
   - component: {fileID: 7521836897913669992}
-  - component: {fileID: -3228294442923706241}
+  - component: {fileID: -4286866819395427369}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: customer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   BopStrengthRange: {x: 0.5, y: 1.5}
   LeaveSpeed: 1
   LeavePos: 10
---- !u!61 &-3228294442923706241
+--- !u!61 &-4286866819395427369
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

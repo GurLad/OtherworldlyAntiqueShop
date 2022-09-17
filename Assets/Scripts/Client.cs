@@ -16,19 +16,22 @@ public class Client : MonoBehaviour
     private void Start()
     {
         // TEMP!!!!
-        Init(null);
+     //   Init(null);
     }
 
     public void Init(Item item)
     {
+        Debug.Log("yoo");
         mg = FindObjectOfType<MainGame>();
         this.item = item;
+        Debug.Log(this.item);
         anim.Spawn(this);
     }
 
     private void FixedUpdate()
     {
-        //transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
+        if (!item.anim.Finished) return;
+        transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
 
     }
 
@@ -40,7 +43,7 @@ public class Client : MonoBehaviour
     public void SpawnItem()
     {
         //create item
-        Instantiate(item, transform.localPosition, Quaternion.identity);
+        Instantiate(item, transform.position+new Vector3(0,-1.5f,0), Quaternion.identity);
         //init item
         item.Spawn(this, mg);
     }

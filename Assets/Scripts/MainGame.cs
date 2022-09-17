@@ -15,6 +15,11 @@ public class MainGame : MonoBehaviour
     public List<Client> clients = new List<Client>();
 
     public List<Item> items = new List<Item>();
+
+    private void Start()
+    {
+        StartCoroutine(MainGameLoop());
+    }
     public IEnumerator MainGameLoop()
     {
         while (true)
@@ -44,6 +49,7 @@ public class MainGame : MonoBehaviour
         currentCustomer++;
         Client c =Instantiate(clients[Random.Range(0,clients.Count)], clientSpawnPos, Quaternion.identity);
         Item randomitem = items[Random.Range(0, items.Count)];
+        Debug.Log(randomitem.name);
         c.Init(randomitem);
     }
 }
