@@ -71,5 +71,9 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 6893999684118556499, guid: e01ece908d302324e90bddbea68264fc, type: 3}
+    - target: {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
+      propertyPath: corrupted
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}

@@ -8,8 +8,9 @@ public class GameUI : MonoBehaviour
     [Header("ExternalObjects")]
     public CameraEffects CameraEffects;
     [Header("Objects")]
-    public Text ScoreDisplay;
+    public List<Text> ScoreDisplays;
     public UIHeart BaseLifeImage;
+    public GameObject GameOverDisplay;
     [Header("ObjectsData")]
     public float HeartOffset;
     [Header("Values")]
@@ -27,6 +28,7 @@ public class GameUI : MonoBehaviour
             UIHeart lifeIcon = Instantiate(BaseLifeImage, BaseLifeImage.transform.parent);
             lifeIcon.Image.rectTransform.anchoredPosition -= new Vector2(HeartOffset * i, 0);
             lifeIcon.gameObject.SetActive(true);
+            lifeIcon.DeathParticles.transform.parent = null;
             lives[i] = lifeIcon;
         }
     }
@@ -34,12 +36,20 @@ public class GameUI : MonoBehaviour
     public void IncreaseScore(int amount)
     {
         currentScore += amount;
-        ScoreDisplay.text = "Score: " + currentScore;
+        foreach (Text scoreDisplay in ScoreDisplays)
+        {
+            scoreDisplay.text = "Score: " + currentScore;
+        }
     }
 
     public void LoseLife()
     {
-        lives[currentLives - 1].Destroy();
+        lives[--currentLives].Destroy();
         CameraEffects.ApplyPoison();
+        if (currentLives <= 0)
+        {
+            Time.timeScale = 0;
+            GameOverDisplay.SetActive(true);
+        }
     }
 }
