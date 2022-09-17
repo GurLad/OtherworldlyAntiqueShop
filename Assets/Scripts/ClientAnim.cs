@@ -5,13 +5,14 @@ using DG.Tweening;
 
 public class ClientAnim : MonoBehaviour
 {
-    public Transform Anchor;
-    [Header("SpawnJump")]
-    public Vector3 JumpInitRot;
-    public float JumpSpeed;
-    [Header("SpawnKnockback")]
-    public Vector3 KnockbackRot;
-    public float KnockbackSpeed;
+    //public Transform Anchor;
+    public Transform Head;
+    //[Header("SpawnJump")]
+    //public Vector3 JumpInitRot;
+    //public float JumpSpeed;
+    //[Header("SpawnKnockback")]
+    //public Vector3 KnockbackRot;
+    //public float KnockbackSpeed;
     [Header("NormalAnimation")]
     public float ItemSpawnDelay;
     public Vector2 BopRateRange;
@@ -21,20 +22,21 @@ public class ClientAnim : MonoBehaviour
     private bool finished;
     private Client client;
 
-    public void Spawn()
+    public void Spawn(Client client)
     {
-        bopRate = Random.Range(BopRateRange.x, BopRateRange.y);
-        bopStrength = Random.Range(BopStrengthRange.x, BopStrengthRange.y);
-        Anchor.DORotate(Vector3.zero, 1 / JumpSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.InCirc).OnKill(() =>
-            Anchor.DORotate(KnockbackRot, 1 / KnockbackSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.OutCirc).OnKill(() =>
-            Anchor.DORotate(Vector3.zero, 1 / KnockbackSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc).OnKill(() =>
-            { BeginBop(); finished = true; })));
+        this.client = client;
+        //bopRate = Random.Range(BopRateRange.x, BopRateRange.y);
+        //bopStrength = Random.Range(BopStrengthRange.x, BopStrengthRange.y);
+        //Anchor.DORotate(Vector3.zero, 1 / JumpSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.InCirc).OnKill(() =>
+        //    Anchor.DORotate(KnockbackRot, 1 / KnockbackSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.OutCirc).OnKill(() =>
+        //    Anchor.DORotate(Vector3.zero, 1 / KnockbackSpeed, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCirc).OnKill(() =>
+        //    { BeginBop(); finished = true; })));
     }
     
     private void BeginBop()
     {
-        Anchor.DOScaleY(1 - bopStrength / 2, 1 / bopRate).SetEase(Ease.InOutSine).OnKill(() =>
-            Anchor.DOScaleY(1 + bopStrength / 2, 1 / bopRate).SetEase(Ease.InOutSine).OnKill(() => BeginBop()));
+        Head.DOScaleY(1 - bopStrength / 2, 1 / bopRate).SetEase(Ease.InOutSine).OnKill(() =>
+            Head.DOScaleY(1 + bopStrength / 2, 1 / bopRate).SetEase(Ease.InOutSine).OnKill(() => BeginBop()));
     }
 
     private void Update()
