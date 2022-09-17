@@ -600,12 +600,8 @@ MonoBehaviour:
   clients:
   - {fileID: 968015827076298425, guid: ff0ed59adf403ab43819874d93ae9e91, type: 3}
   items:
-  - {fileID: 3818150607877510452, guid: bc779747b90ed9f42b9861068dbeed18, type: 3}
-  - {fileID: 3818150607877510452, guid: caa0ee3b79f30d64496d7e4641ab54f3, type: 3}
-  - {fileID: 3818150607877510452, guid: d968fb5cb06ee67498c2823e70b3634f, type: 3}
-  - {fileID: 3818150607877510452, guid: 699ae70b60aa4534d92a51d34f8df404, type: 3}
-  - {fileID: 3818150607877510452, guid: 208f2e19c7ec92b428433ad20afc2ae5, type: 3}
-  - {fileID: 3818150607877510452, guid: 21f02c52ecd9c3941b7b2096139dd0d8, type: 3}
+  - {fileID: 3818150607877510452, guid: b9a4b36eb8215a64ba44f2139fadc457, type: 3}
+  - {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
 --- !u!1 &1363453428
 GameObject:
   m_ObjectHideFlags: 0

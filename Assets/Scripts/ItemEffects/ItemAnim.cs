@@ -28,7 +28,7 @@ public class ItemAnim : MonoBehaviour
 
     public void Spawn()
     {
-       // Renderer.sprite = Sprites[Random.Range(0, Sprites.Count)];
+        Renderer.sprite = Sprites[Random.Range(0, Sprites.Count)];
         Finished = false;
         targetPos = SquashAnchor.localPosition;
         SquashAnchor.localPosition = JumpInitPos;
