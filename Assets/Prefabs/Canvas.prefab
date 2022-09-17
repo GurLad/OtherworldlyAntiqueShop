@@ -775,9 +775,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2158710280914974857}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
+      - m_Target: {fileID: 8682673037408723711}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
