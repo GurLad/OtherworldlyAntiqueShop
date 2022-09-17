@@ -20,10 +20,6 @@ public class ItemAnim : MonoBehaviour
     public bool Finished;
     private Vector3 targetPos;
 
-    private void Start()
-    {
-    }
-
     private void Reset()
     {
         Renderer = GetComponentInChildren<SpriteRenderer>();
@@ -42,7 +38,7 @@ public class ItemAnim : MonoBehaviour
         SquashAnchor.DOLocalJump(Vector3.zero, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
             {
                 Finished = true;
-                   SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
+                    SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
                     SquashAnchor.DOScaleY(1, 1 / SquashSpeed));
             });
     }

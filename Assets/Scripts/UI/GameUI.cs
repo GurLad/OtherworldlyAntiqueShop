@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    [Header("ExternalObjects")]
+    public CameraEffects CameraEffects;
     [Header("Objects")]
     public Text ScoreDisplay;
     public UIHeart BaseLifeImage;
@@ -38,5 +40,6 @@ public class GameUI : MonoBehaviour
     public void LoseLife()
     {
         lives[currentLives - 1].Destroy();
+        CameraEffects.ApplyPoison();
     }
 }

@@ -30,12 +30,6 @@ public class CameraEffects : MonoBehaviour
         {
             Material.SetColor("_ColorModifier", Color.white);
             Material.SetFloat("_BlurStrength", 0);
-            // TEMP!!!
-            strength -= Time.deltaTime;
-            if (strength < -3)
-            {
-                ApplyPoison();
-            }
         }
     }
 
