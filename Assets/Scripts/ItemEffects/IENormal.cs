@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class IEIncreaseScore : ItemEffect
 {
-    // Nothing special
+    protected override void BuyEffect()
+    {
+        // Do nothing - normal item
+    }
 }

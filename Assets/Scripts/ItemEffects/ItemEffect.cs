@@ -5,5 +5,11 @@ using UnityEngine;
 public abstract class ItemEffect : MonoBehaviour
 {
     public int Score;
-    public int Damage;
+    public bool Corrupted;
+
+    protected abstract void BuyEffect();
+    public void Buy()
+    {
+        // TBA: Modify score and stuff
+    }
 }

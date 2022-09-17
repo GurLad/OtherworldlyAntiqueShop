@@ -19,6 +19,9 @@ public class ItemAnim : MonoBehaviour
     public Transform SquashAnchor;
     public float SquashHeight;
     public float SquashSpeed;
+    [HideInInspector]
+    public bool Finished;
+
     private void Start()
     {
         Spawn();
@@ -39,6 +42,7 @@ public class ItemAnim : MonoBehaviour
         SquashAnchor.DOScale(Vector3.one, 1 / JumpSpeed);
         SquashAnchor.DOLocalJump(Vector3.zero, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
             SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
-            SquashAnchor.DOScaleY(1, 1 / SquashSpeed)));
+            SquashAnchor.DOScaleY(1, 1 / SquashSpeed).OnKill(() =>
+            Finished = true)));
     }
 }
