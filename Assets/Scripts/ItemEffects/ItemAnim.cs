@@ -18,6 +18,7 @@ public class ItemAnim : MonoBehaviour
     public float SquashSpeed;
     [HideInInspector]
     public bool Finished;
+    private Vector3 targetPos;
 
     private void Start()
     {
@@ -31,12 +32,13 @@ public class ItemAnim : MonoBehaviour
 
     public void Spawn()
     {
+        targetPos = SquashAnchor.localPosition;
         SquashAnchor.localPosition = JumpInitPos;
         SquashAnchor.localScale = JumpInitSize;
         Renderer.color = new Color(Renderer.color.r, Renderer.color.g, Renderer.color.b, JumpInitFade);
         Renderer.DOFade(1, 1 / JumpSpeed);
         SquashAnchor.DOScale(Vector3.one, 1 / JumpSpeed);
-        SquashAnchor.DOLocalJump(Vector3.zero, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
+        SquashAnchor.DOLocalJump(targetPos, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
             {
                 Finished = true;
                 SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
