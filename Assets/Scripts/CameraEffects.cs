@@ -20,7 +20,7 @@ public class CameraEffects : MonoBehaviour
     {
         if (strength > 0)
         {
-            strength -= Time.deltaTime * PoisonFadeSpeed;
+            strength -= Time.unscaledDeltaTime * PoisonFadeSpeed;
             Color color = (MaxPoisonColor * strength + Color.white * (1 - strength));
             Material.SetColor("_ColorModifier", color);
             Material.SetFloat("_BlurRadius", BlurRange.x * strength + BlurRange.y * (1 - strength));
