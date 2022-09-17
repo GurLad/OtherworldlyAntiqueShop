@@ -10,9 +10,6 @@ public class Item : MonoBehaviour
     public ItemAnim anim;
     [Header("Values")]
     public bool corrupted;
-    public float score;
-    [HideInInspector]
-    public float conveyorSpeed;
     [HideInInspector]
     public float RegisterXpoint;
     public Vector3 ClientOffset;
@@ -27,13 +24,13 @@ public class Item : MonoBehaviour
     [SerializeField]
     private int Score;
 
+    MainGame mg;
 
     Collider2D col;
     public void Spawn(Client client, MainGame mg)
     {
         anim.Spawn();
         this.client = client;
-        conveyorSpeed = mg.conveyorSpeed;
     }
 
     private void Reset()
@@ -43,6 +40,7 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
+        mg = FindObjectOfType<MainGame>();
         anim = GetComponent<ItemAnim>();
         sr = GetComponentInChildren<SpriteRenderer>();
         maincam = Camera.main;
@@ -61,14 +59,14 @@ public class Item : MonoBehaviour
 
         if (!dragging)
         {
-            transform.position += new Vector3(Time.fixedDeltaTime * conveyorSpeed, 0, 0);
+            transform.position += new Vector3(Time.fixedDeltaTime * mg.conveyorSpeed, 0, 0);
             realpos = transform.position;
 
         }
         else
         {
 
-            ghost.transform.position += new Vector3(Time.fixedDeltaTime * conveyorSpeed, 0, 0);
+            ghost.transform.position += new Vector3(Time.fixedDeltaTime * mg.conveyorSpeed, 0, 0);
             realpos = ghost.transform.position;
 
         }
