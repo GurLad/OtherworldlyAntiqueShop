@@ -10,4 +10,14 @@ public class GameUI : MonoBehaviour
     private Image[] lives;
     private int currentLives;
     private int currentScore;
+
+    public void IncreaseScore(int amount)
+    {
+
+    }
+
+    public void LoseLife()
+    {
+
+    }
 }
