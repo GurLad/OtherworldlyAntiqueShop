@@ -150,13 +150,14 @@ public class Item : MonoBehaviour
     {
         if (used) return;
         used = true;
-        if (!corrupted)
+        if (corrupted)
         {
 
 
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().LoseLife();
             SoundController.PlaySound(CurseSound);
+            CurseAnim();
 
             // Take damage
         }
@@ -174,7 +175,7 @@ public class Item : MonoBehaviour
     {
 
 
-        if (corrupted)
+        if (!corrupted) 
         {
 
                 
@@ -188,7 +189,6 @@ public class Item : MonoBehaviour
         {
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().IncreaseScore(Score);
-            MoneyAnim();
             SoundController.PlaySound(CurseBreak);
 
             // Remove lives
