@@ -5,6 +5,7 @@
         _MainTex ("Texture", 2D) = "white" {}
         _Noise("Noise", 2D) = "white" {}
         _BlurRadius("Blur radius", Float) = 750
+        _BlurStrength("Blur strength", Range(0.0, 1.0)) = 1
         _Speed("Speed", Float) = 1
         _ColorModifier("Color modifier", Color) = (.25, .5, .5, 1)
     }
@@ -44,6 +45,7 @@
             sampler2D _MainTex;
             sampler2D _Noise;
             float _BlurRadius;
+            float _BlurStrength;
             float _Speed;
             float4 _ColorModifier;
 
@@ -63,30 +65,35 @@
                 {
                     col.b = 1;
                 }
-                // Increase brightness of nearby pixels
-                float size = col.r + col.g + col.b;
-                if (size < 0.25f)
+                if (_BlurStrength > 0)
                 {
-                    size = 0.25f;
-                }
-                if (size <= 2.75f)
-                {
-                    col.rgb /= 9;
-                    for (float k = -1; k <= 1; k++)
+                    fixed4 tempCol = tex2D(_MainTex, i.uv);
+                    // Increase brightness of nearby pixels
+                    float size = col.r + col.g + col.b;
+                    if (size < 0.25f)
                     {
-                        for (float j = -1; j <= 1; j++)
+                        size = 0.25f;
+                    }
+                    if (size <= 2.75f)
+                    {
+                        col.rgb /= 9;
+                        for (float k = -1; k <= 1; k++)
                         {
-                            float2 pos = i.uv;
-                            pos.x += (k / (_BlurRadius * size)) * tex2D(_Noise, float2(i.uv.x + _Time[0] * _Speed, i.uv.y + _Time[0] * _Speed)).r;
-                            pos.y += (j / (_BlurRadius * size)) * tex2D(_Noise, float2(i.uv.y + 42 + _Time[0] * _Speed, i.uv.x + 76 + _Time[0] * _Speed)).r;
-                            fixed4 altCol = tex2D(_MainTex, pos);
-                            col.rgb += altCol.rgb / 9;
+                            for (float j = -1; j <= 1; j++)
+                            {
+                                float2 pos = i.uv;
+                                pos.x += (k / (_BlurRadius * size)) * tex2D(_Noise, float2(i.uv.x + _Time[0] * _Speed, i.uv.y + _Time[0] * _Speed)).r;
+                                pos.y += (j / (_BlurRadius * size)) * tex2D(_Noise, float2(i.uv.y + 42 + _Time[0] * _Speed, i.uv.x + 76 + _Time[0] * _Speed)).r;
+                                fixed4 altCol = tex2D(_MainTex, pos);
+                                col.rgb += altCol.rgb / 9;
+                            }
                         }
                     }
-                }
-                else
-                {
-                    col.rgb += col.rgb / 9;
+                    else
+                    {
+                        col.rgb += col.rgb / 9;
+                    }
+                    col = tempCol * (1 - _BlurStrength) + col * _BlurStrength;
                 }
                 col.r *= _ColorModifier.r;
                 col.g *= _ColorModifier.g;

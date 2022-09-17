@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8446616109435511637}
   - component: {fileID: 8446616109435511639}
   - component: {fileID: 1418274804610852691}
+  - component: {fileID: 9042146416424673498}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -97,3 +98,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 021469d1fcd0bf94f888cc3e856a113b, type: 2}
+--- !u!114 &9042146416424673498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8446616109435511638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c3c83d2585ab34891fa3b2e78684c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 021469d1fcd0bf94f888cc3e856a113b, type: 2}
+  MaxPoisonColor: {r: 0.7084294, g: 0.6367924, b: 1, a: 1}
+  BlurRange: {x: 25, y: 75}
+  PoisonFadeSpeed: 0.7
