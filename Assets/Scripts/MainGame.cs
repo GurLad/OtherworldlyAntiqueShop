@@ -9,7 +9,11 @@ public class MainGame : MonoBehaviour
     public float conveyorSpeed;
     public float customerWait;
 
+    public Vector3 clientSpawnPos;
+    public Client client;
 
+
+    public List<Item> items = new List<Item>();
     public IEnumerator MainGameLoop()
     {
         while (true)
@@ -29,12 +33,7 @@ public class MainGame : MonoBehaviour
 
             }
         }
-        //client comes up 
-        //gives item 
-        //initializes item so he moves with it 
-
-
-        //every x seconds a new  client comes 
+        
 
 
     }
@@ -42,5 +41,6 @@ public class MainGame : MonoBehaviour
     public void SpawnClient()
     {
         currentCustomer++;
+      Client c =Instantiate(client, clientSpawnPos, Quaternion.identity);
     }
 }
