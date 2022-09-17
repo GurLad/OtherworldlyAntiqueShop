@@ -14,11 +14,12 @@ public class Item : MonoBehaviour
     public SpriteRenderer ghostobject;
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         maincam = Camera.main;
+
     }
 
-
+    
     private void FixedUpdate()
     {
         if (!dragging)
