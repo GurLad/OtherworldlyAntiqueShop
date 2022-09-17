@@ -20,7 +20,6 @@ public class Item : MonoBehaviour
     private Client client;
 
 
-    public float RegisterXpoint;
     private void Start()
     {
         maincam = Camera.main;
