@@ -58,7 +58,7 @@ MonoBehaviour:
   FadeSpeed: 1
   Volume: 1
   PlayOnStart: 1
-  KeepTimestamp: 0
+  KeepTimestamp: 1
   Playing: 
 --- !u!114 &4856445562792130464
 MonoBehaviour:

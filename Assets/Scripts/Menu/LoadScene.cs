@@ -10,6 +10,7 @@ public class LoadScene : MonoBehaviour
     public void Click()
     {
         Time.timeScale = 1;
+        CrossfadeMusicPlayer.Instance.Play("Main0");
         SceneManager.LoadScene(Name);
     }
 }
