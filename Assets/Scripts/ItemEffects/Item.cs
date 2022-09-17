@@ -27,6 +27,10 @@ public class Item : MonoBehaviour
     MainGame mg;
 
     Collider2D col;
+
+    public GameObject money;
+
+    bool used = false;
     public void Spawn(Client client, MainGame mg)
     {
         anim.Spawn();
@@ -73,6 +77,7 @@ public class Item : MonoBehaviour
 
         if (realpos.x >= RegisterXpoint)
         {
+
             BuyEffect();
         }
     }
@@ -140,6 +145,8 @@ public class Item : MonoBehaviour
 
     public void BuyEffect()
     {
+        if (used) return;
+        used = true;
         if (corrupted)
         {
 
@@ -153,7 +160,7 @@ public class Item : MonoBehaviour
         {
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().IncreaseScore(Score);
-
+            MoneyAnim();
             // Remove lives
         }
     }
@@ -178,6 +185,21 @@ public class Item : MonoBehaviour
         Destroy(this.gameObject);
 
 
+    }
+
+
+    public void MoneyAnim()
+    {
+        for(int k = 0; k < 3; k++)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject g = Instantiate(money, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 2f), 0), Quaternion.identity);
+                g.transform.DOScale(0, 1);
+                g.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
+            }
+        }
+        
     }
 
 

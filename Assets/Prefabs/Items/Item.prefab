@@ -162,11 +162,11 @@ MonoBehaviour:
   ghostobject: {fileID: 6690838324818566094, guid: 501d5f54d0a60054fb99b5e379948ecf, type: 3}
   anim: {fileID: 7575393908772317862}
   corrupted: 0
-  score: 0
-  conveyorSpeed: 0.5
   RegisterXpoint: 5.4
   ClientOffset: {x: 0, y: 0, z: 0}
   client: {fileID: 0}
+  Score: 0
+  money: {fileID: 6893999684118556499, guid: e01ece908d302324e90bddbea68264fc, type: 3}
 --- !u!114 &7575393908772317862
 MonoBehaviour:
   m_ObjectHideFlags: 0
