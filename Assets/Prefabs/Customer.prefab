@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: -3228294442923706241}
   m_Layer: 0
   m_Name: Customer
-  m_TagString: Untagged
+  m_TagString: Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,11 +264,12 @@ MonoBehaviour:
   JumpSpeed: 5
   KnockbackRot: {x: 0, y: 0, z: -15}
   KnockbackSpeed: 15
-  ItemSpawnDelay: 1
+  ItemSpawnDelay: 0.2
   BopRateRange: {x: 0.3, y: 0.7}
   BopStrengthRange: {x: 0.5, y: 1.5}
   LeaveSpeed: 1
   LeavePos: 10
+  finished: 0
 --- !u!61 &-3228294442923706241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,5 +294,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.91, y: 5.04}
   m_EdgeRadius: 0

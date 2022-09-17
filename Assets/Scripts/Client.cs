@@ -30,7 +30,6 @@ public class Client : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!item.anim.Finished) return;
         transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
 
     }

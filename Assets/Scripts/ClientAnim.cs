@@ -26,7 +26,8 @@ public class ClientAnim : MonoBehaviour
     private float headInitPos;
     private float bopRate;
     private float bopStrength;
-    private bool finished;
+    [HideInInspector]
+    public bool finished;
     private Client client;
 
     public void Spawn(Client client)
