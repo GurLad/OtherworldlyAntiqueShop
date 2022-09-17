@@ -167,6 +167,8 @@ MonoBehaviour:
   client: {fileID: 0}
   Score: 0
   money: {fileID: 6893999684118556499, guid: e01ece908d302324e90bddbea68264fc, type: 3}
+  GetmoneySound: {fileID: 8300000, guid: 24c7d03230377a64f92ebe5f978728ee, type: 3}
+  CurseSound: {fileID: 8300000, guid: cf3da100485e98c4e828582a85e7195f, type: 3}
 --- !u!114 &7575393908772317862
 MonoBehaviour:
   m_ObjectHideFlags: 0

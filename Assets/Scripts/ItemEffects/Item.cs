@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Threading.Tasks;
 
 public class Item : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class Item : MonoBehaviour
     public GameObject money;
 
     bool used = false;
+
+    public AudioClip GetmoneySound;
+    public AudioClip CurseSound;
     public void Spawn(Client client, MainGame mg)
     {
         anim.Spawn();
@@ -161,6 +165,7 @@ public class Item : MonoBehaviour
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().IncreaseScore(Score);
             MoneyAnim();
+            FindObjectOfType<AudioSource>().PlayOneShot(GetmoneySound);
             // Remove lives
         }
     }
@@ -188,8 +193,9 @@ public class Item : MonoBehaviour
     }
 
 
-    public void MoneyAnim()
+    public async void MoneyAnim()
     {
+        List<GameObject> monies = new List<GameObject>();
         for(int k = 0; k < 3; k++)
         {
             for (int i = 0; i < 5; i++)
@@ -197,9 +203,16 @@ public class Item : MonoBehaviour
                 GameObject g = Instantiate(money, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 2f), 0), Quaternion.identity);
                 g.transform.DOScale(0, 1);
                 g.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
+                monies.Add(g);
             }
         }
-        
+
+       await Task.Delay(1000);
+       foreach(GameObject g in monies)
+        {
+            Destroy(g);
+        }
+
     }
 
 
