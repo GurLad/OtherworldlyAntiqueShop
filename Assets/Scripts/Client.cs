@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Client : MonoBehaviour
 {
+    public ClientAnim anim;
     private MainGame mg;
     private Item item;
+
+    private void Reset()
+    {
+        anim = GetComponent<ClientAnim>();
+    }
 
     public void Init(Item item)
     {
         mg = FindObjectOfType<MainGame>();
         this.item = item;
-        // TODO: animate first
-        SpawnItem();
+        anim.Spawn(this);
     }
 
     private void FixedUpdate()
