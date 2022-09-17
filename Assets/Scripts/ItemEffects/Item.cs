@@ -6,11 +6,14 @@ using DG.Tweening;
 public class Item : MonoBehaviour
 {
     [Header("Objects")]
-    public ItemEffect itemEffect;
     public SpriteRenderer ghostobject;
     public ItemAnim anim;
     [Header("Values")]
+    public bool corrupted;
+    public float score;
+    [HideInInspector]
     public float conveyorSpeed;
+    [HideInInspector]
     public float RegisterXpoint;
     public Vector3 ClientOffset;
     private Camera maincam;
@@ -135,8 +138,14 @@ public class Item : MonoBehaviour
 
     public void BuyEffect()
     {
-        itemEffect.Buy();
-
+        if (corrupted)
+        {
+            // Take damage
+        }
+        else
+        {
+            // Remove lives
+        }
     }
 
     public void RejectEffect()
