@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public bool corrupted;
-    Camera maincam;
-    SpriteRenderer sr;
-    Vector3 realpos;
-    public float conveyorSpeed;
-    bool dragging;
-    SpriteRenderer ghost;
+    [Header("Objects")]
+    public ItemEffect itemEffect;
     public SpriteRenderer ghostobject;
-
-    public Collider2D col;
+    public ItemAnim anim;
+    [Header("Values")]
+    public float conveyorSpeed;
     public float RegisterXpoint;
+    public Vector3 ClientOffset;
+    private Camera maincam;
+    private SpriteRenderer sr;
+    private Vector3 realpos;
+    private bool dragging;
+    private SpriteRenderer ghost;
+    private Client client;
 
-    public Client thisClient;
+
+    public float RegisterXpoint;
     private void Start()
     {
-        sr = GetComponentInChildren<SpriteRenderer>();
         maincam = Camera.main;
-
     }
-
     
     private void FixedUpdate()
     {
@@ -49,6 +50,10 @@ public class Item : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!anim.Finished)
+        {
+            return;
+        }
         ghost = Instantiate(ghostobject,transform.position,Quaternion.identity);
         ghost.sprite = sr.sprite;
         dragging = true;
@@ -56,48 +61,20 @@ public class Item : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-
+        if (!anim.Finished)
+        {
+            return;
+        }
         Vector3 pos = maincam.ScreenToWorldPoint(Input.mousePosition);
         pos.z = 0;
         transform.position = pos;
-
-
-
     }
 
     private void OnMouseUp()
     {
-        col.enabled = false;
-
-        RaycastHit2D r = Physics2D.Raycast(transform.position, -Vector2.up);
-        col.enabled = true;
-
-        if (r)
-        {
-            if (r.transform.tag == "Client")
-            {
-                if(r.transform.GetComponent<Client>()== thisClient)
-                {
-                    Destroy(ghost);
-                    dragging = false;
-                    RejectEffect();
-                    return;
-
-                }
-                
-            }
-
-            if (r.transform.tag == "Register")
-            {
-                Destroy(ghost);
-                dragging = false;
-                BuyEffect();
-                return;
-            }
-        }
-        
         transform.position = ghost.transform.position;
-
+        Destroy(ghost);
+        dragging = false;
 
         //if mosue on top of the client do something
 
@@ -110,14 +87,7 @@ public class Item : MonoBehaviour
 
     public void BuyEffect()
     {
-        if (corrupted)
-        {
-            //bad
-        }
-        else
-        {
-            //good
-        }
+        itemEffect.Buy();
     }
 
     public void RejectEffect()

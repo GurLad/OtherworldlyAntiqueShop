@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class Client : MonoBehaviour
 {
+    private MainGame mg;
+    private Item item;
 
-    public MainGame mg;
-    public Item item;
-   public void init(Item item)
+    public void Init(Item item)
     {
         mg = FindObjectOfType<MainGame>();
         this.item = item;
-        //create item
-        //init item
+        // TODO: animate first
+        SpawnItem();
     }
 
     private void FixedUpdate()
     {
-       transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
+        transform.position += new Vector3( Time.fixedDeltaTime * mg.conveyorSpeed,0,0);
 
     }
 
-    public void Leave()
+    public void SpawnItem()
     {
-
+        //create item
+        Instantiate(item, transform.localPosition, Quaternion.identity);
+        //init item
+        item.Spawn(this, mg);
     }
-
-
 }
