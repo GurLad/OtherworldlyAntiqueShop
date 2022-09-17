@@ -17,6 +17,11 @@ public class MainGame : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+
+
+    
+
+
     private void Start()
     {
         StartCoroutine(MainGameLoop());

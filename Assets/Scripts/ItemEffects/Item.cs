@@ -24,6 +24,9 @@ public class Item : MonoBehaviour
     [SerializeField]
     private Client client;
 
+    [SerializeField]
+    private int Score;
+
 
     Collider2D col;
     public void Spawn(Client client, MainGame mg)
@@ -141,13 +144,17 @@ public class Item : MonoBehaviour
     {
         if (corrupted)
         {
+
+
             StartCoroutine(DestroyAnimLoop());
+            FindObjectOfType<GameUI>().LoseLife();
 
             // Take damage
         }
         else
         {
             StartCoroutine(DestroyAnimLoop());
+            FindObjectOfType<GameUI>().IncreaseScore(Score);
 
             // Remove lives
         }
@@ -156,6 +163,10 @@ public class Item : MonoBehaviour
     public void RejectEffect()
     {
         StartCoroutine(DestroyAnimLoop());
+
+
+
+
         //animations and stuff 
     }
 
