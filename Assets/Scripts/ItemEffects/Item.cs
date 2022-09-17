@@ -13,8 +13,10 @@ public class Item : MonoBehaviour
     SpriteRenderer ghost;
     public SpriteRenderer ghostobject;
 
-
+    public Collider2D col;
     public float RegisterXpoint;
+
+    public Client thisClient;
     private void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -65,16 +67,45 @@ public class Item : MonoBehaviour
 
     private void OnMouseUp()
     {
+        col.enabled = false;
+
+        RaycastHit2D r = Physics2D.Raycast(transform.position, -Vector2.up);
+        col.enabled = true;
+
+        if (r)
+        {
+            if (r.transform.tag == "Client")
+            {
+                if(r.transform.GetComponent<Client>()== thisClient)
+                {
+                    Destroy(ghost);
+                    dragging = false;
+                    RejectEffect();
+                    return;
+
+                }
+                
+            }
+
+            if (r.transform.tag == "Register")
+            {
+                Destroy(ghost);
+                dragging = false;
+                BuyEffect();
+                return;
+            }
+        }
+        
         transform.position = ghost.transform.position;
-        Destroy(ghost);
-        dragging = false;
+
 
         //if mosue on top of the client do something
 
         //if mouse on top of cash register do someting
-        
+
         //if mouse up on nothing return to previous position + movement (show movement with a translucent copy)
     }
+
 
 
     public void BuyEffect()
