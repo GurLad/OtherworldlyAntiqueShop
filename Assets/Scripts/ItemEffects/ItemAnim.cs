@@ -35,7 +35,7 @@ public class ItemAnim : MonoBehaviour
 
 
         SquashAnchor.DOScale(Vector3.one, 1 / JumpSpeed);
-        SquashAnchor.DOLocalJump(Vector3.zero, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
+        SquashAnchor.DOLocalJump(targetPos, JumpPower, 1, 1 / JumpSpeed).SetEase(Ease.InSine).OnKill(() =>
             {
                 Finished = true;
                     SquashAnchor.DOScaleY(SquashHeight, 1 / SquashSpeed).OnKill(() =>
