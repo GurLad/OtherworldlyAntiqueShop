@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CameraEffects : MonoBehaviour
 {
+    public PPTScript PPTScript;
     public Material Material;
     public Color MaxPoisonColor;
     public Vector2 BlurRange;
     public float PoisonFadeSpeed;
     private float strength;
+
+    private void Start()
+    {
+        PPTScript.Material = Material = Instantiate(Material);
+    }
 
     private void Update()
     {
