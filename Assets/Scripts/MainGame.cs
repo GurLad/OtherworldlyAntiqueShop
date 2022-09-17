@@ -38,13 +38,13 @@ public class MainGame : MonoBehaviour
             //new client wait
             yield return new WaitForSeconds(customerWait);
 
-            if (currentCustomer % 3 == 0)
+            if (currentCustomer % 5 == 0)
             {
                 //values will change
                 conveyorSpeed += (0.2f);
-                customerWait -= (0.4f);
-                customerWait = Mathf.Clamp(customerWait, 0.8f, 5f);
-                conveyorSpeed = Mathf.Clamp(conveyorSpeed, 0.5f, 8f);
+                customerWait -= (0.2f);
+                customerWait = Mathf.Clamp(customerWait, 0.8f, 3f);
+                conveyorSpeed = Mathf.Clamp(conveyorSpeed, 1.5f, 8f);
 
 
             }
