@@ -35,6 +35,7 @@ public class Item : MonoBehaviour
 
     public AudioClip GetmoneySound;
     public AudioClip CurseSound;
+    public AudioClip CurseBreak;
     public void Spawn(Client client, MainGame mg)
     {
         anim.Spawn();
@@ -157,6 +158,7 @@ public class Item : MonoBehaviour
 
             StartCoroutine(DestroyAnimLoop());
             FindObjectOfType<GameUI>().LoseLife();
+            FindObjectOfType<AudioSource>().PlayOneShot(CurseSound);
 
             // Take damage
         }
@@ -172,10 +174,27 @@ public class Item : MonoBehaviour
 
     public void RejectEffect()
     {
-        StartCoroutine(DestroyAnimLoop());
 
 
+        if (!corrupted)
+        {
 
+
+            StartCoroutine(DestroyAnimLoop());
+            FindObjectOfType<GameUI>().LoseLife();
+            FindObjectOfType<AudioSource>().PlayOneShot(CurseSound);
+
+            // Take damage
+        }
+        else
+        {
+            StartCoroutine(DestroyAnimLoop());
+            FindObjectOfType<GameUI>().IncreaseScore(Score);
+            MoneyAnim();
+            FindObjectOfType<AudioSource>().PlayOneShot(CurseBreak);
+
+            // Remove lives
+        }
 
         //animations and stuff 
     }
@@ -209,6 +228,29 @@ public class Item : MonoBehaviour
 
        await Task.Delay(1000);
        foreach(GameObject g in monies)
+        {
+            Destroy(g);
+        }
+
+    }
+
+
+    public async void CurseAnim()
+    {
+        List<GameObject> monies = new List<GameObject>();
+        for (int k = 0; k < 3; k++)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject g = Instantiate(money, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 2f), 0), Quaternion.identity);
+                g.transform.DOScale(0, 1);
+                g.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
+                monies.Add(g);
+            }
+        }
+
+        await Task.Delay(1000);
+        foreach (GameObject g in monies)
         {
             Destroy(g);
         }

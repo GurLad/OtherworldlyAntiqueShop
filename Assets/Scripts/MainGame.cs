@@ -37,11 +37,11 @@ public class MainGame : MonoBehaviour
             //new client wait
             yield return new WaitForSeconds(5);
 
-            if (currentCustomer % 5 == 0)
+            if (currentCustomer % 3 == 0)
             {
                 //values will change
-                conveyorSpeed += (0.5f/currentCustomer);
-                customerWait -= (5/currentCustomer);
+                conveyorSpeed += (1f);
+                customerWait -= (0.2f);
 
             }
         }
