@@ -19,6 +19,8 @@ public class Item : MonoBehaviour
     private SpriteRenderer ghost;
     private Client client;
 
+
+    Collider2D col;
     public void Spawn(Client client, MainGame mg)
     {
         anim.Spawn();
@@ -28,17 +30,27 @@ public class Item : MonoBehaviour
 
     private void Reset()
     {
-        anim = GetComponentInChildren<ItemAnim>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        
     }
 
     private void Start()
     {
+        anim = GetComponent<ItemAnim>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         maincam = Camera.main;
+
+        col = GetComponent<Collider2D>();
     }
 
     private void FixedUpdate()
     {
+
+
+        if (!anim.Finished)
+        {
+            return;
+        }
+
         if (!dragging)
         {
             transform.position += new Vector3(Time.fixedDeltaTime * conveyorSpeed, 0, 0);
@@ -72,10 +84,7 @@ public class Item : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (!anim.Finished)
-        {
-            return;
-        }
+        if (!dragging) return;
         Vector3 pos = maincam.ScreenToWorldPoint(Input.mousePosition);
         pos.z = 0;
         transform.position = pos;
@@ -83,13 +92,38 @@ public class Item : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!anim.Finished)
+        if (!dragging) return;
+        col.enabled = false;
+        RaycastHit2D r = Physics2D.Raycast(transform.position, -Vector2.up);
+        col.enabled = true;
+
+        if (r)
         {
-            return;
+            if (r.transform.tag == "Client")
+            {
+                if (r.transform.GetComponent<Client>() == client)
+                {
+                    Destroy(ghost.gameObject);
+                    dragging = false;
+                    RejectEffect();
+                    return;
+                }
+            }
+
+            if (r.transform.tag == "Client")
+            {
+                Destroy(ghost.gameObject);
+                dragging = false;
+                BuyEffect();
+                return;
+
+            }
         }
-        transform.position = ghost.transform.position;
+
         Destroy(ghost);
         dragging = false;
+        transform.position = ghost.transform.position;
+      
 
         //if mosue on top of the client do something
 
@@ -106,6 +140,7 @@ public class Item : MonoBehaviour
 
     public void RejectEffect()
     {
+        Destroy(this.gameObject);
         //animations and stuff 
     }
 
