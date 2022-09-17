@@ -28,14 +28,15 @@ public class MainGame : MonoBehaviour
     }
     public IEnumerator MainGameLoop()
     {
+        yield return new WaitForSeconds(1);
+
         while (true)
         {
             //grace period
-            yield return new WaitForSeconds(1);
             SpawnClient();
             
             //new client wait
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(customerWait);
 
             if (currentCustomer % 3 == 0)
             {
