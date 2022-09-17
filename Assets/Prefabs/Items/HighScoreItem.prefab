@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8231401467228738955
+--- !u!1001 &4778118667599540622
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1395244421180098910, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1395244421180098910, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: m_Color.g
@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1395244421180098910, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: m_Color.r
-      value: 0.8327522
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7575393908514091857, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: m_Name
-      value: Item 1
+      value: HighScoreItem
       objectReference: {fileID: 0}
     - target: {fileID: 7575393908514091863, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: m_RootOrder
@@ -68,12 +68,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
+      propertyPath: Score
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
       propertyPath: money
       value: 
       objectReference: {fileID: 6893999684118556499, guid: e01ece908d302324e90bddbea68264fc, type: 3}
     - target: {fileID: 7575393908772317860, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
-      propertyPath: CurseBreak
-      value: 
-      objectReference: {fileID: 8300000, guid: 4e42763b462421d47860e717c376a5a9, type: 3}
+      propertyPath: corrupted
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf6d9ece104651409c9c46bd0f3428d, type: 3}
