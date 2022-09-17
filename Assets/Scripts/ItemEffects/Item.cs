@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Item : MonoBehaviour
 {
@@ -140,8 +141,19 @@ public class Item : MonoBehaviour
 
     public void RejectEffect()
     {
-        Destroy(this.gameObject);
+        StartCoroutine(DestroyAnimLoop());
         //animations and stuff 
+    }
+
+
+    public IEnumerator DestroyAnimLoop()
+    {
+
+        this.transform.DOScale(0, 0.5f).SetEase(Ease.OutQuint);
+        yield return new WaitForSeconds(2);
+        Destroy(this.gameObject);
+
+
     }
 
 
